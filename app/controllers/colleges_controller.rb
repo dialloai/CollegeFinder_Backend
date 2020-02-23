@@ -6,8 +6,7 @@ class CollegesController < ApplicationController
         render json: colleges.to_json(serialize_data)
           # college = College.all
           # render json: college
-          # ({except: [:created_at, :updated_at]})
-            
+          # ({except: [:created_at, :updated_at]})  
         end
   
       #   def index
@@ -17,7 +16,7 @@ class CollegesController < ApplicationController
   
         def show
           @college = College.find(params[:id])
-          render json: @college
+          render json: @college.to_json(serialize_data)
         end
   
         def create
@@ -44,6 +43,6 @@ class CollegesController < ApplicationController
         end
   
         def serialize_data        
-        {:except => [:created_at,:updated_at]}   
+        {:except => [:created_at,:updated_at]}
         end
 end
