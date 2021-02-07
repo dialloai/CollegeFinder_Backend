@@ -1,3 +1,5 @@
+#CollegesController
+
 class CollegesController < ApplicationController
 
     def index
